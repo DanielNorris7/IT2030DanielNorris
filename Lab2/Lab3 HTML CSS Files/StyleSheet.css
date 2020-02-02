@@ -1,0 +1,10 @@
+﻿body {
+    background-color: lightgray;
+    text-align: left;
+    font-family: Calibri; 
+}
+
+header.myHeader {
+    text-align: center!important;
+    background-color: whitesmoke;
+}

@@ -20,7 +20,7 @@ namespace Lab2.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Other/Details.cshtml");
         }
 
         public IActionResult Privacy()

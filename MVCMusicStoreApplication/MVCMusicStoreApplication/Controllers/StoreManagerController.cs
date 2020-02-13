@@ -82,7 +82,7 @@ namespace MVCMusicStoreApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl")] Album album)
+        public ActionResult Edit([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl,CountryOfOrigin,InStock")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -128,6 +128,41 @@ namespace MVCMusicStoreApplication.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Test()
+        {
+            DbSet<Album> albumns = db.Albums;
+
+            // Find an album by Album Name
+            //IQueryable<Album> albumByName = from a in albumns
+            //                                where a.Title == "Stormbringer"
+            //                                select a;
+
+            IQueryable<Album> albumByName = albumns.Where(a => a.Title == "Stormbringer");
+
+
+            // Find an album by Artist Name
+            //IQueryable<Album> albumByArtist = from a in albumns
+            //                                  where a.Artist.Name == "Chic"
+            //                                  select a;
+
+            IQueryable<Album> albumByArtist = albumns.Where(a => a.Artist.Name == "Chic");
+
+
+            // Find an album by Genre
+            //IQueryable<Album> albumByGenre = from a in albumns
+            //                                 where a.Genre.Name == "Classical"
+            //                                 orderby a.Title descending
+            //                                 select a;
+
+            IQueryable<Album> albumByGenre = albumns.Where(a => a.Genre.Name == "Classical").OrderByDescending(a => a.Title);
+
+            ViewBag.AlbumsByName = new SelectList(albumByName, "AlbumId", "Title", albumByName.First().AlbumId);
+            ViewBag.AlbumsByArtist = new SelectList(albumByArtist, "AlbumId", "Title", albumByArtist.First().AlbumId);
+            ViewBag.AlbumsByGenre = new SelectList(albumByGenre, "AlbumId", "Title", albumByGenre.First().AlbumId);
+
+            return View();
         }
     }
 }

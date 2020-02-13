@@ -10,5 +10,7 @@
         public virtual Genre Genre { get; set; }
         public virtual Artist Artist { get; set; }
         public virtual string AlbumArtUrl { get; set; }
+        public virtual string CountryOfOrigin { get; set; }
+        public virtual bool InStock { get; set; }
     }
 }

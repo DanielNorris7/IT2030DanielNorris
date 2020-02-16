@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using EnrollmentApplication.Data;
+using EnrollmentApplication.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using EnrollmentApplication.Data;
-using EnrollmentApplication.Models;
 
 namespace EnrollmentApplication.Controllers
 {
@@ -50,7 +46,7 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentID,StudentID,CourseID,Grade")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "EnrollmentID,StudentID,CourseID,Grade,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +82,7 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentID,StudentID,CourseID,Grade")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "EnrollmentID,StudentID,CourseID,Grade,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {

@@ -126,14 +126,39 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Data\EnrollmentDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002200105499_InitialCreate.cs" />
+    <Compile Include="Migrations\202002200105499_InitialCreate.Designer.cs">
+      <DependentUpon>202002200105499_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002291912421_Uodate1.cs" />
+    <Compile Include="Migrations\202002291912421_Uodate1.Designer.cs">
+      <DependentUpon>202002291912421_Uodate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002291935336_AddStudentAge.cs" />
+    <Compile Include="Migrations\202002291935336_AddStudentAge.Designer.cs">
+      <DependentUpon>202002291935336_AddStudentAge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002292126034_AddNoteToEnrollmentModel.cs" />
+    <Compile Include="Migrations\202002292126034_AddNoteToEnrollmentModel.Designer.cs">
+      <DependentUpon>202002292126034_AddNoteToEnrollmentModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002292156596_AddAddressInformationToStudent.cs" />
+    <Compile Include="Migrations\202002292156596_AddAddressInformationToStudent.Designer.cs">
+      <DependentUpon>202002292156596_AddAddressInformationToStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\InvalidCharsAttribute.cs" />
+    <Compile Include="Models\MinimumAgeAttribute.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +204,16 @@
     <Content Include="Views\Enrollment\Details.cshtml" />
     <Content Include="Views\Enrollment\Edit.cshtml" />
     <Content Include="Views\Enrollment\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -195,6 +230,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002200105499_InitialCreate.resx">
+      <DependentUpon>202002200105499_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002291912421_Uodate1.resx">
+      <DependentUpon>202002291912421_Uodate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002291935336_AddStudentAge.resx">
+      <DependentUpon>202002291935336_AddStudentAge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002292126034_AddNoteToEnrollmentModel.resx">
+      <DependentUpon>202002292126034_AddNoteToEnrollmentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002292156596_AddAddressInformationToStudent.resx">
+      <DependentUpon>202002292156596_AddAddressInformationToStudent.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

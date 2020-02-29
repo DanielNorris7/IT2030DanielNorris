@@ -1,6 +1,4 @@
-﻿using EnrollmentApplication.Models;
-using System.Data.Entity;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
@@ -10,8 +8,6 @@ namespace EnrollmentApplication
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new SampleData());
-
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

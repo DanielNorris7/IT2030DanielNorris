@@ -15,11 +15,14 @@ namespace EnrollmentApplication.Models
         {
             if (value != null)
             {
-                if (value.ToString().Contains(_invalidChar))
+                foreach (char item in value.ToString().ToCharArray())
                 {
-                    string errorMessage = FormatErrorMessage(validationContext.DisplayName);
+                    if (item.ToString().Contains(_invalidChar))
+                    {
+                        string errorMessage = FormatErrorMessage(validationContext.DisplayName);
 
-                    return new ValidationResult(errorMessage);
+                        return new ValidationResult(errorMessage);
+                    }
                 }
             }
 

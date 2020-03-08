@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthWithGoogle", "AuthWithGoogle\AuthWithGoogle.csproj", "{BC52F0A1-6F26-4523-BBEE-16DE00062FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthWithGoogle.Tests", "AuthWithGoogle.Tests\AuthWithGoogle.Tests.csproj", "{4201D36C-1193-4F56-BB8E-E64E733F6674}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC52F0A1-6F26-4523-BBEE-16DE00062FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC52F0A1-6F26-4523-BBEE-16DE00062FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC52F0A1-6F26-4523-BBEE-16DE00062FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC52F0A1-6F26-4523-BBEE-16DE00062FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4201D36C-1193-4F56-BB8E-E64E733F6674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4201D36C-1193-4F56-BB8E-E64E733F6674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4201D36C-1193-4F56-BB8E-E64E733F6674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4201D36C-1193-4F56-BB8E-E64E733F6674}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E08A2E4-4267-4B1F-955B-A9D9DD4EC435}
+	EndGlobalSection
+EndGlobal

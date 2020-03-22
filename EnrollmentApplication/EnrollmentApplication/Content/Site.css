@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.fun {
+    color: blue;
+    font-weight: bold;
+    font-size: x-large;
+    border: 1px dotted blue;
+}

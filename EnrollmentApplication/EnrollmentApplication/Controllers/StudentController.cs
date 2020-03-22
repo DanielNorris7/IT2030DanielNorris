@@ -1,19 +1,52 @@
-﻿using System;
+﻿using EnrollmentApplication.Data;
+using EnrollmentApplication.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using EnrollmentApplication.Data;
-using EnrollmentApplication.Models;
 
 namespace EnrollmentApplication.Controllers
 {
     public class StudentController : Controller
     {
         private EnrollmentDB db = new EnrollmentDB();
+
+        public ActionResult StudentOfTheMonth()
+        {
+            Student student = getStudentOfTheMonth();
+            return PartialView("_getStudentOfTheMonth", student);
+        }
+
+        /// <summary>
+        /// Select the Student of the Month
+        /// </summary>
+        /// <returns></returns>
+        private Student getStudentOfTheMonth()
+        {
+            return db.Students
+                .OrderBy(o => Guid.NewGuid())
+                .First();
+        }
+
+        public ActionResult StudentSearch(string studentName)
+        {
+            return PartialView("_studentSearch", getStudent(studentName));
+        }
+
+        /// <summary>
+        /// Finds the students entered into the search field
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        private List<Student> getStudent(string student)
+        {
+            return db.Students
+                .Where(o => o.StudentFirstName.Contains(student) || o.StudentLastName.Contains(student))
+                .OrderBy(o => o.StudentLastName)
+                .OrderBy(o => o.StudentFirstName).ToList();
+        }
 
         // GET: Student
         public ActionResult Index()

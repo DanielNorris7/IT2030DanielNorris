@@ -1,19 +1,34 @@
-﻿using System;
+﻿using EnrollmentApplication.Data;
+using EnrollmentApplication.Models;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using EnrollmentApplication.Data;
-using EnrollmentApplication.Models;
 
 namespace EnrollmentApplication.Controllers
 {
     public class CourseController : Controller
     {
         private EnrollmentDB db = new EnrollmentDB();
+
+        public ActionResult CourseSearch(string courseTitle)
+        {
+            return PartialView("_courseSearch", getCourses(courseTitle));
+        }
+
+        /// <summary>
+        /// Finds the courses entered into the search field
+        /// </summary>
+        /// <param name="courseTitle"></param>
+        /// <returns></returns>
+        private List<Course> getCourses(string courseTitle)
+        {
+            return db.Courses
+                .Where(o => o.CourseTitle.Contains(courseTitle)).ToList();
+        }
+
 
         // GET: Course
         public ActionResult Index()

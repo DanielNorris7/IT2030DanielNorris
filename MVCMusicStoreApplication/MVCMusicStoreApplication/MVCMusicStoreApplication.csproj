@@ -129,14 +129,19 @@
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Data\MVCMusicStoreDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002292210352_UpdatingDB.cs" />
-    <Compile Include="Migrations\202002292210352_UpdatingDB.Designer.cs">
-      <DependentUpon>202002292210352_UpdatingDB.cs</DependentUpon>
+    <Compile Include="Migrations\202002130044075_InitialCreate.cs" />
+    <Compile Include="Migrations\202002130044075_InitialCreate.Designer.cs">
+      <DependentUpon>202002130044075_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002292223416_InititalUpdate.cs" />
+    <Compile Include="Migrations\202002292223416_InititalUpdate.Designer.cs">
+      <DependentUpon>202002292223416_InititalUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -200,6 +205,9 @@
     <Content Include="Views\Artist\Details.cshtml" />
     <Content Include="Views\Artist\Edit.cshtml" />
     <Content Include="Views\Artist\Index.cshtml" />
+    <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Store\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -218,8 +226,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002292210352_UpdatingDB.resx">
-      <DependentUpon>202002292210352_UpdatingDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002130044075_InitialCreate.resx">
+      <DependentUpon>202002130044075_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002292223416_InititalUpdate.resx">
+      <DependentUpon>202002292223416_InititalUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,12 +1,16 @@
 namespace MVCMusicStoreApplication.Migrations
 {
+    using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MVCMusicStoreApplication.Data.MVCMusicStoreDB>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "MVCMusicStoreApplication.Data.MVCMusicStoreDB";
         }
 
         protected override void Seed(MVCMusicStoreApplication.Data.MVCMusicStoreDB context)

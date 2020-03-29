@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVCMusicStoreApplication.Models.Album>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+
+<img src="~/Content/Images/logo.png" />
+<h2>ASP.NET MVC MUSIC STORE</h2>
+
+<hr />
+
+<h2>Details on the selected album</h2>
+@foreach (var album in Model)
+{
+    <div>
+        <p>
+            <strong>Album Art:</strong>
+            @Html.DisplayFor(o => album.AlbumArtUrl)
+        </p>
+        <p>
+            <strong>Title:</strong>
+            @Html.DisplayFor(o => album.Title)
+        </p>
+        <p>
+            <strong>Artist Name:</strong>
+            @Html.DisplayFor(o => album.Artist.Name)
+        </p>
+        <p>
+            <strong>Country of Origin:</strong>
+            @Html.DisplayFor(o => album.CountryOfOrigin)
+        </p>
+        <p>
+            <strong>Genre:</strong>
+            @Html.DisplayFor(o => album.Genre.Name)
+        </p>
+        <p>
+            <strong>In Stock?:</strong>
+            @Html.DisplayFor(o => album.InStock)
+        </p>
+        <p>
+            <strong>Price:</strong>
+            @Html.DisplayFor(o => album.Price)
+        </p>
+    </div>
+
+    <div>
+        @Html.ActionLink("Add to Cart", "AddToCart",
+            new { id = album.AlbumId },
+            new { @class = "btn btn-primary" })
+    </div>
+
+    <br />
+
+    <div>
+        @Html.ActionLink("<- Back to Browse", "Browse")
+    </div>
+}
+
+

@@ -3,7 +3,7 @@ namespace MVCMusicStoreApplication.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdatingDB : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {

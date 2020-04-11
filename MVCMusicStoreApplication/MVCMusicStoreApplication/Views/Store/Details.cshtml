@@ -4,16 +4,8 @@
     ViewBag.Title = "Details";
 }
 
-<br />
-<br />
-<br />
-
-<img src="~/Content/Images/logo.png" />
-<h2>ASP.NET MVC MUSIC STORE</h2>
-
-<hr />
-
 <h2>Details on the selected album</h2>
+
 @foreach (var album in Model)
 {
     <div>
@@ -48,7 +40,7 @@
     </div>
 
     <div>
-        @Html.ActionLink("Add to Cart", "AddToCart",
+        @Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCart",
             new { id = album.AlbumId },
             new { @class = "btn btn-primary" })
     </div>

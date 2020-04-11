@@ -129,6 +129,7 @@
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Data\MVCMusicStoreDB.cs" />
@@ -143,11 +144,19 @@
     <Compile Include="Migrations\202002292223416_InititalUpdate.Designer.cs">
       <DependentUpon>202002292223416_InititalUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004082349429_shoppingCart1.cs" />
+    <Compile Include="Migrations\202004082349429_shoppingCart1.Designer.cs">
+      <DependentUpon>202004082349429_shoppingCart1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\SampleData.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +171,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Apps\MusicScripts.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -208,6 +218,7 @@
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002292223416_InititalUpdate.resx">
       <DependentUpon>202002292223416_InititalUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004082349429_shoppingCart1.resx">
+      <DependentUpon>202004082349429_shoppingCart1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

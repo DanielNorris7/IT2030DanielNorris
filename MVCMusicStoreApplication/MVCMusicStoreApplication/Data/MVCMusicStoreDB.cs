@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace MVCMusicStoreApplication.Data
 {
@@ -14,7 +10,7 @@ namespace MVCMusicStoreApplication.Data
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
+
         public MVCMusicStoreDB() : base("name=MVCMusicStoreDB")
         {
         }
@@ -24,5 +20,7 @@ namespace MVCMusicStoreApplication.Data
         public System.Data.Entity.DbSet<MVCMusicStoreApplication.Models.Artist> Artists { get; set; }
 
         public System.Data.Entity.DbSet<MVCMusicStoreApplication.Models.Genre> Genres { get; set; }
+
+        public System.Data.Entity.DbSet<MVCMusicStoreApplication.Models.Cart> Carts { get; set; }
     }
 }

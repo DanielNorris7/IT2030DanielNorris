@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EventFinder.Models.Event>
+
+@{
+    ViewBag.Title = "FindEvent";
+}
+
+<h2>FindEvent</h2>
+
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Event Search</div>
+        <div class="panel-body">
+            @using (Ajax.BeginForm("EventSearch", "Home", new AjaxOptions
+            {
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "GET",
+                OnFailure = "searchFailed",
+                LoadingElementId = "ajax-loader",
+                UpdateTargetId = "searchresults"
+            }))
+            {
+                <input type="text" name="eventInfo" placeholder="Event Type or Event Title" />
+                <input type="text" name="location" placeholder="Location" />
+                <input type="submit" value="search" />
+            }
+            <div id="searchresults"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/Application/EventScripts.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

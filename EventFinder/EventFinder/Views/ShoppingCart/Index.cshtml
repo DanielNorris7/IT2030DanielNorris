@@ -1,0 +1,41 @@
+﻿@model EventFinder.Models.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+@section Scripts{
+    <script src="~/Scripts/Application/EventScripts.js"></script>
+}
+
+<h2>Shopping Cart</h2>
+
+<br />
+<div id="update-message"></div>
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.CartItems)
+        {
+            <tr id="record-@item.RecordId">
+                <td>@item.EventSelected.EventTitle</td>
+                <td id="item-count-@item.RecordId">@item.Count</td>
+                <td><a href="#" data-id="@item.RecordId" class="RemoveLink">Cancel Order</a></td>
+            </tr>
+        }
+
+        <tr>
+            <td colspan="2">Cart Total</td>
+            <td id="cart-total">@Model.CartTotal</td>
+            <td></td>
+        </tr>
+    </table>
+    <p class="button">
+        @Html.ActionLink("Back To Home", "Index", "Home")
+    </p>
+</div>

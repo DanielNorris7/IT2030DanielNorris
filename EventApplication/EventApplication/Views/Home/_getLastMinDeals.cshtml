@@ -1,0 +1,38 @@
+﻿@model IEnumerable<EventApplication.Models.Event>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Last Minute Events!</h3>
+    </div>
+    <div class="panel-body">
+        <div id="event-details">
+            <ol>
+                @foreach (var item in Model)
+                {
+                <li>
+                    <strong>Event Title:</strong>
+                    @item.EventTitle
+
+                    <strong>Location:</strong>
+                    @item.Location
+
+                    <strong>Event Type:</strong>
+                    @item.EventType.Type
+
+                    <strong>Start Date</strong>
+                    @item.StartDate.ToString("MM/dd/yyyy")
+
+                    <strong>Start Time: </strong>
+                    @item.StartTime.ToString("h:mm.tt")
+
+                    <div>
+                        @Html.ActionLink("Register for Event", "AddToCart", "ShoppingCart",
+                            new { id = item.EventID },
+                            new { @class = "btn btn-primary" })
+                    </div>
+                </li>
+                }
+            </ol>
+        </div>
+    </div>
+</div>

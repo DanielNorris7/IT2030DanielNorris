@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EventApplication.Models.Event>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron">
+        <img src="~/Content/Images/HomePageImage.jpg" id="homeImage"/>
+        <h1>Event Finder</h1>
+        <p class="lead">No longer be frustrated when you can't find your favorite events. With Event Finder, all of your Events can be found in one place!</p>
+    </div>
+
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Event Search</div>
+        <div class="panel-body">
+            @using (Ajax.BeginForm("EventSearch", "Home", new AjaxOptions
+            {
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "GET",
+                OnFailure = "searchFailed",
+                LoadingElementId = "ajax-loader",
+                UpdateTargetId = "searchresults"
+            }))
+            {
+                <input type="text" name="eventInfo" placeholder="Event Type or Event Title" />
+                <input type="text" name="location" placeholder="Location" />
+                <input type="submit" value="search" />
+            }
+            <div id="searchresults"></div>
+        </div>
+    </div>
+
+    <div id="lastMinDeals">
+        @Ajax.ActionLink("Events happening within the next 2 days!",
+           "LastMinDeals",
+           null,
+           new AjaxOptions
+           {
+               UpdateTargetId = "lastMinDeals",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET"
+           },
+           new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/Application/EventScripts.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}
